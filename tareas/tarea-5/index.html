@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/Clase-de-unity">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.734750531211">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.734751090420">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -12,6 +12,7 @@
     <!-- Primary Meta Tags -->
     <title>Tarea 5</title>
     <meta name="title" content="Tarea 5">
+    <meta name="description" content="image lo primero que hice fue agruegar fantasmas en la escena de la tarea 4 le cambie unos opciones para hacer el fondo transparente" />
 
     <!-- Canonical -->
     <link rel="canonical" href="https://blackcatcxii.github.io/Clase-de-unity/tareas/tarea-5/" />
@@ -20,19 +21,24 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://blackcatcxii.github.io/Clase-de-unity/tareas/tarea-5/">
     <meta property="og:title" content="Tarea 5">
+    <meta property="og:description" content="image lo primero que hice fue agruegar fantasmas en la escena de la tarea 4 le cambie unos opciones para hacer el fondo transparente">
+    <meta property="og:image" content="https://user-images.githubusercontent.com/75856980/231914484-8eb1b2ae-8904-4d90-b072-22771b5f1c68.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://blackcatcxii.github.io/Clase-de-unity/tareas/tarea-5/">
     <meta property="twitter:title" content="Tarea 5">
+    <meta property="twitter:description" content="image lo primero que hice fue agruegar fantasmas en la escena de la tarea 4 le cambie unos opciones para hacer el fondo transparente">
+    <meta property="twitter:image" content="https://user-images.githubusercontent.com/75856980/231914484-8eb1b2ae-8904-4d90-b072-22771b5f1c68.png">
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("/Clase-de-unity/doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=2.4.0.734750531211" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=2.4.0.734751090420" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.734750531211" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.734751090420" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.734750531211" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.734751090420" data-turbo-eval="false" defer></script>
+    <script id="prism-js" type="text/javascript" src="../../resources/js/prism.js?v=2.4.0.734751090420" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -176,6 +182,83 @@
         <span>Tarea 5</span>
     </h1>
 </doc-anchor-target>
+<p><figure class="content-center">
+    <img src="https://user-images.githubusercontent.com/75856980/231914484-8eb1b2ae-8904-4d90-b072-22771b5f1c68.png" alt="image" />
+    <figcaption class="caption">image</figcaption>
+</figure>
+lo primero que hice fue agruegar fantasmas en la escena de la tarea 4 le cambie unos opciones para hacer el fondo transparente
+a cada fantasma le agruegue un collider y un animator
+Luego tome el script del profe y lo modifique</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-ruby"><code v-pre class="language-ruby">public class ScreenRaycast : MonoBehaviour
+{
+    public GameObject laserPrefab;
+    private Camera cam;
+
+    void Start(){
+        cam = Camera.main;
+    }
+
+    void Update()
+    {
+        if(Input.GetMouseButtonDown(0)){
+            RaycastHit hit;
+            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+            if(Physics.Raycast(ray, out hit)){
+                if(hit.collider != null){
+                    Debug.Log(hit.collider.name);
+                    hit.collider.gameObject.GetComponent&lt;Animator&gt;().SetTrigger(&quot;triggerBump&quot;);
+                    Destroy(hit.collider.gameObject);
+                    Instantiate(laserPrefab, hit.point, Quaternion.identity);
+                }
+            }
+        }
+    }
+}</code></pre>
+</doc-codeblock></div>
+<p>donde cree un variable pública llamada laserPrefab que se utilizará para generar un rayo láser cuando se destruya un objeto de juego.
+Dentro del bloque if (Physics.Raycast (ray, out hit)), agruegue dos líneas de código. La primera línea llama a Destroy (hit.collider.gameObject) para destruir el objeto del juego que fue golpeado por el rayo. La segunda línea usa Instantiate para crear una nueva instancia del objeto de juego laserPrefab en el punto donde el rayo golpeó el objeto de juego.
+<figure class="content-center">
+    <img src="https://user-images.githubusercontent.com/75856980/231915429-4cef23bc-0d5c-4ae0-b087-b62ac29f5632.png" alt="image" />
+    <figcaption class="caption">image</figcaption>
+</figure>
+esto genero varios laseres o lines de luz donde se destruyo el fantasma pero no quitaba los lasers entonces agrege una variable de float pública llamada laserLifetime que me deja darle un tiempo en que este visible el laser y 2 lineas de codigo que destuira el laser en el tiempo determinado por el laserLiftime</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-ruby"><code v-pre class="language-ruby">public class ScreenRaycast : MonoBehaviour
+{
+    public GameObject laserPrefab;
+    public float laserLifetime = 1f;
+    private Camera cam;
+
+    void Start(){
+        cam = Camera.main;
+    }
+
+    void Update()
+    {
+        if(Input.GetMouseButtonDown(0)){
+            RaycastHit hit;
+            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+            if(Physics.Raycast(ray, out hit)){
+                if(hit.collider != null){
+                    Debug.Log(hit.collider.name);
+                    hit.collider.gameObject.GetComponent&lt;Animator&gt;().SetTrigger(&quot;triggerBump&quot;);
+                    Destroy(hit.collider.gameObject);
+                    GameObject laser = Instantiate(laserPrefab, hit.point, Quaternion.identity);
+                    Destroy(laser, laserLifetime);
+                }
+            }
+        }
+    }
+}</code></pre>
+</doc-codeblock></div>
+<p>
+<figure>
+    <div class="relative w-full mb-6 overflow-hidden pt-9/16">
+        <iframe class="w-full h-full border-0 absolute inset-0" src="https://www.youtube.com/embed/2hn6n6c2oT4" allowfullscreen></iframe>
+    </div>
+</figure>
+</p>
 
                                 
                                 <!-- Required only on API pages -->
@@ -242,6 +325,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script>window.__DOCS__ = { "title": "Tarea 5", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
+    <script>window.__DOCS__ = { "title": "Tarea 5", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false }</script>
 </body>
 </html>
