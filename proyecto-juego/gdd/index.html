@@ -10,26 +10,24 @@
     <meta name="generator" content="Retype 2.4.0">
 
     <!-- Primary Meta Tags -->
-    <title>Tarea 2</title>
-    <meta name="title" content="Tarea 2">
-    <meta name="description" content="Screenshot 2023-03-22 213927" />
+    <title>GDD</title>
+    <meta name="title" content="GDD">
+    <meta name="description" content="SkyHook: La búsqueda del camino de regreso\"Agárrate fuerte y trepa hacia la libertad\"" />
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://blackcatcxii.github.io/Clase-de-unity/tareas/tarea-2/" />
+    <link rel="canonical" href="https://blackcatcxii.github.io/Clase-de-unity/proyecto-juego/gdd/" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://blackcatcxii.github.io/Clase-de-unity/tareas/tarea-2/">
-    <meta property="og:title" content="Tarea 2">
-    <meta property="og:description" content="Screenshot 2023-03-22 213927">
-    <meta property="og:image" content="https://user-images.githubusercontent.com/75856980/227072791-48bc566f-75a9-4742-a01b-71ff419504b5.jpg">
+    <meta property="og:url" content="https://blackcatcxii.github.io/Clase-de-unity/proyecto-juego/gdd/">
+    <meta property="og:title" content="GDD">
+    <meta property="og:description" content="SkyHook: La búsqueda del camino de regreso\"Agárrate fuerte y trepa hacia la libertad\"">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://blackcatcxii.github.io/Clase-de-unity/tareas/tarea-2/">
-    <meta property="twitter:title" content="Tarea 2">
-    <meta property="twitter:description" content="Screenshot 2023-03-22 213927">
-    <meta property="twitter:image" content="https://user-images.githubusercontent.com/75856980/227072791-48bc566f-75a9-4742-a01b-71ff419504b5.jpg">
+    <meta property="twitter:url" content="https://blackcatcxii.github.io/Clase-de-unity/proyecto-juego/gdd/">
+    <meta property="twitter:title" content="GDD">
+    <meta property="twitter:description" content="SkyHook: La búsqueda del camino de regreso\"Agárrate fuerte y trepa hacia la libertad\"">
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("/Clase-de-unity/doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
@@ -39,7 +37,6 @@
     <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.736486128570" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
     <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.736486128570" data-turbo-eval="false" defer></script>
-    <script id="prism-js" type="text/javascript" src="../../resources/js/prism.js?v=2.4.0.736486128570" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -181,114 +178,232 @@
                                 <div id="docs-sidebar-right-toggle"></div>
                 
                                 <!-- Page content  -->
-<doc-anchor-target id="tarea-2" class="break-words">
+<doc-anchor-target id="skyhook" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#tarea-2">#</doc-anchor-trigger>
-        <span>Tarea 2</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#skyhook">#</doc-anchor-trigger>
+        <span>“SkyHook”</span>
     </h1>
 </doc-anchor-target>
-<p><figure class="content-center">
-    <img src="https://user-images.githubusercontent.com/75856980/227072791-48bc566f-75a9-4742-a01b-71ff419504b5.jpg" alt="Screenshot 2023-03-22 213927" />
-    <figcaption class="caption">Screenshot 2023-03-22 213927</figcaption>
-</figure>
-</p>
-<p>Empece agruegando los objetos y despues con el script.
-aqui cree el movimiento usando el Input.GetAxis</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-ruby"><code v-pre class="language-ruby">{
-    public CharacterController controller;
-
-    public float speed = 6f;
-
-    // Update is called once per frame
-    void Update()
-    {
-        float vertical = Input.GetAxis(&quot;Vertical&quot;);
-        Vector3 direction = new Vector3(0f, 0f, vertical).normalized;
-
-        if (direction.magnitude &gt;= 0.1f)
-        {
-            controller.Move(direction * speed * Time.deltaTime);
-        }
-
-    }</code></pre>
-</doc-codeblock></div>
-<p><figure class="content-center">
-    <img src="https://user-images.githubusercontent.com/75856980/227075826-b83e639d-6848-489e-8898-7addd3f10c8e.jpg" alt="Screenshot 2023-03-22 222944" />
-    <figcaption class="caption">Screenshot 2023-03-22 222944</figcaption>
-</figure>
-Aqui intente crear la rotacion que no funciono como queria y rotaba el objeto noma</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-ruby"><code v-pre class="language-ruby">    public float speed = 6f;
-    public float sensitivity = 8f;
-    public float rotateSpeed = 8f;
-    private bool rotateLeft = false;
-    // Update is called once per frame
-    void Update()
-    {
-        float vertical = Input.GetAxis(&quot;Vertical&quot;);
-        Vector3 direction = new Vector3(0f, 0f, vertical).normalized;
-
-        if (direction.magnitude &gt;= 0.1f)
-        {
-            controller.Move(direction * speed * Time.deltaTime);
-        }
-        if (Input.mousePosition.x &lt;= Screen.width / 2)
-        {
-            rotateLeft = true;
-        }
-        else
-        {
-            rotateLeft = false;
-        }
-        if (Input.GetMouseButton(0))
-        {
-            float rotateAmount = sensitivity * Time.deltaTime;
-            if (rotateLeft)
-            {
-                rotateAmount *= -rotateSpeed;
-            }
-            else
-            {
-                rotateAmount *= rotateSpeed;
-            }
-
-            Vector3 rotation = new Vector3(0f, rotateAmount, 0f);
-            transform.eulerAngles += rotation;
-        }
-    }</code></pre>
-</doc-codeblock></div>
-<p>Despues me di cuenta que esto no servia y busque por una forma mas corto y que sirva.</p>
-<p>Empece crando una vector3 nuevo rotatedDirection que usa la rotacion y la variable direccion que cree anteriormente para el movimiento despues cree un variable para rotar de forma horizontal con el mouse</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-ruby"><code v-pre class="language-ruby">{
-    public CharacterController controller;
-
-    public float speed = 6f;
-    public float sensitivity = 10f;
-
-    void Update()
-    {
-        //Movimiento W y S
-        float vertical = Input.GetAxis(&quot;Vertical&quot;);
-        Vector3 direction = new Vector3(0f, 0f, vertical).normalized;
-
-        if (direction.magnitude &gt;= 0.1f)
-        {
-            Vector3 rotatedDirection = transform.rotation * direction;
-            controller.Move(rotatedDirection * speed * Time.deltaTime);
-        }
-        //Rotation
-        if (Input.GetMouseButton(0))
-        {
-           float rotateHorizontal = Input.GetAxis(&quot;Mouse X&quot;);
-           Vector3 rotation = new Vector3(0f, rotateHorizontal, 0f) * sensitivity;
-           transform.Rotate(rotation, Space.World);
-           
-        }
-    }</code></pre>
-</doc-codeblock></div>
-<p><a href="https://user-images.githubusercontent.com/75856980/227369357-db29342a-a8ca-4f7c-b014-07cdb618c773.mp4">https://user-images.githubusercontent.com/75856980/227369357-db29342a-a8ca-4f7c-b014-07cdb618c773.mp4</a></p>
+<doc-anchor-target id="identidad-del-juegomantra">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#identidad-del-juegomantra">#</doc-anchor-trigger>
+        <span>Identidad del juego/Mantra:</span>
+    </h2>
+</doc-anchor-target>
+<p>SkyHook: La búsqueda del camino de regreso
+&quot;Agárrate fuerte y trepa hacia la libertad&quot;</p>
+<doc-anchor-target id="pilares-de-diseño">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#pilares-de-diseño">#</doc-anchor-trigger>
+        <span>Pilares de diseño:</span>
+    </h2>
+</doc-anchor-target>
+<ol>
+<li>Mecánicas principales de ganchos y gas para mover al personaje por el entorno.</li>
+<li>Historia de exploración en un planeta desconocido, con la megaestructura como
+principal obstáculo.</li>
+<li>Ambiente de ciencia ficción con elementos de misterio y aventura.</li>
+</ol>
+<doc-anchor-target id="género">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#género">#</doc-anchor-trigger>
+        <span>Género</span>
+    </h2>
+</doc-anchor-target>
+<p>Aventura/Acción</p>
+<doc-anchor-target id="historia">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#historia">#</doc-anchor-trigger>
+        <span>Historia</span>
+    </h2>
+</doc-anchor-target>
+<p>En un futuro distante, la humanidad ha logrado colonizar otros planetas en galaxias lejanas.
+Ack, un astronauta, se encuentra en una misión de exploración en un planeta desconocido
+cuando de repente es sorprendido por una megaestructura colosal que bloquea todas las
+comunicaciones y deshabilita la navegación de su nave espacial. Atrapado y sin posibilidad
+de volver a casa, Ack descubre que la megaestructura es obra de una civilización antigua y
+avanzada tecnológicamente, que ha utilizado materiales magnéticos ultra resistentes para
+construirla. también descubre un gas muy potente el cual decide recrear en la nave
+La única manera de avanzar y encontrar una salida es utilizando ganchos especiales
+creados por la nave para las labores de mantenimiento y reparación más el gas. Poco a
+poco, Ack va descubriendo que la megaestructura es en realidad una especie de laberinto
+vertical, diseñado por la civilización para proteger un conocimiento ancestral que podría
+cambiar el curso de la historia humana. La habilidad con los ganchos se convierte en la
+única forma de sobrevivir y avanzar en la estructura, mientras la presión y el misterio van
+aumentando.
+Además, descubre que cada vez que llega a la cima de una estructura en un nivel, puede
+desactivar esa estructura en particular, si desactiva todas las estructuras colosales podrá
+recuperar su nave y volver a casa.
+Finalmente, después de superar muchos obstáculos y desafíos, Ack descubre que la
+megaestructura ha sido diseñada como una especie de prueba de selección para encontrar
+al individuo más capacitado y valiente para recibir el conocimiento ancestral.</p>
+<doc-anchor-target id="mecánicas">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#mecánicas">#</doc-anchor-trigger>
+        <span>Mecánicas:</span>
+    </h2>
+</doc-anchor-target>
+<p>SkyHook se basa en el uso de ganchos y gas para mover al personaje en el entorno. El
+jugador dispara ganchos que arrastran al personaje hacia puntos específicos, permitiéndole
+moverse rápidamente por el entorno. El gas se utiliza para impulsar al personaje hacia
+adelante y debe ser usado estratégicamente debido a su rápido agotamiento. La
+combinación de ganchos y gas permite movimientos fluidos y acrobáticos para superar los
+desafíos y obstáculos del juego. Sin embargo, hay pocos depósitos de gas en la estructura,
+lo que obliga al jugador a ser cuidadoso en su uso. Si se queda sin gas, deberá volver a la
+nave para recargar, lo que puede retrasar la misión. Por lo tanto, el uso estratégico del gas
+es fundamental para cumplir los objetivos a tiempo.</p>
+<doc-anchor-target id="niveles">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#niveles">#</doc-anchor-trigger>
+        <span>Niveles:</span>
+    </h2>
+</doc-anchor-target>
+<p>Ascender consta de tres niveles que se vuelven cada vez más difíciles a medida que se
+avanza en el juego. Cada nivel presenta una estructura diferente para escalar y el objetivo
+es llegar a la cima en el menor tiempo posible. El nivel uno es el más sencillo, mientras que
+el nivel dos presenta la misma estructura que el nivel uno, pero con la diferencia de que
+cambia de color, lo que hace que el jugador no pueda engancharse por un determinado
+periodo de tiempo. El nivel tres aumenta la frecuencia en el cambio de color de la
+estructura, lo que dificulta aún más el ascenso. Además de las dificultades mencionadas, en
+ciertas zonas de la mega estructura se presentan desafíos adicionales que requieren
+estrategia por parte del jugador. Por ejemplo, en algunos tramos la estructura puede tener
+una forma más irregular, lo que dificulta el agarre. También pueden aparecer obstáculos en
+forma de pequeñas estructuras, que deben ser evitados para no perder tiempo y avanzar
+más rápido. En el nivel tres, los desafíos son aún mayores, ya que la frecuencia en el
+cambio de color de la estructura hace que el jugador deba ser aún más preciso y estratégico
+para alcanzar la cima en el menor tiempo posible.</p>
+<doc-anchor-target id="personajes">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#personajes">#</doc-anchor-trigger>
+        <span>Personajes:</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>Ack: es el protagonista de la historia, un astronauta que se encuentra atrapado en
+una megaestructura en un planeta desconocido. Es valiente, ingenioso y habilidoso
+en el uso de los ganchos para avanzar por la estructura. Su objetivo principal es
+desactivar todas las estructuras colosales para poder recuperar su nave y volver a
+casa.</li>
+<li>Orbe: es un pequeño androide que acompaña a Ack en su viaje por la
+megaestructura. Su función principal es ayudar a Ack a no caer en la locura a través
+de la interacción con él y ofrecerle consejos y sugerencias. Es un personaje
+amigable y servicial, que a menudo proporciona información útil para avanzar en la
+estructura.</li>
+<li>Entidad misteriosa: es una presencia desconocida que se hace evidente a lo largo
+de la historia, pero cuyo verdadero propósito no se revela hasta el final. Es la entidad
+que ha construido la megaestructura y ha diseñado la prueba de selección para
+encontrar al individuo más capacitado y valiente para recibir el conocimiento
+ancestral. Su presencia y misterio son constantes a lo largo de la historia, lo que
+agrega un elemento de tensión y misterio a la trama.</li>
+</ul>
+<doc-anchor-target id="características">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#características">#</doc-anchor-trigger>
+        <span>Características:</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>Mecánica de cuerdas innovadora para el movimiento del personaje.</li>
+<li>Estrategia para poder llegar a la cima sin caer.</li>
+</ul>
+<doc-anchor-target id="interfaz">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#interfaz">#</doc-anchor-trigger>
+        <span>Interfaz</span>
+    </h2>
+</doc-anchor-target>
+<p>La interfaz es muy minimalista, para no distraer al jugador de la acción y mantenerlo
+concentrado en la escalada. Solo se muestra la cantidad de gas disponible en la parte
+superior izquierda de la pantalla, en forma de un indicador de barra. En la parte superior
+derecha de la pantalla, se muestra el tiempo restante en modo contrarreloj y la puntuación
+en modo clásico. En ambos modos, la interfaz es simple y limpia, para que el jugador pueda
+centrarse en la tarea de escalar y superar los desafíos de la megaestructura.
+La pantalla de inicio también es minimalista, con solo tres opciones: &quot;Jugar&quot;, &quot;Opciones&quot; y
+&quot;Salir&quot;. En la opción de &quot;Opciones&quot;, el jugador puede ajustar la configuración de audio y
+video, así como seleccionar el modo de juego deseado (contrarreloj o clásico). En general,
+la interfaz de Ascender es intuitiva y fácil de usar, lo que permite al jugador centrarse en la
+experiencia de la escalada y el desafío de superar la megaestructura.</p>
+<doc-anchor-target id="controles">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#controles">#</doc-anchor-trigger>
+        <span>Controles:</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>El jugador puede moverse utilizando las teclas &quot;W&quot;, &quot;A&quot;, &quot;S&quot; y &quot;D&quot;, con la tecla
+“SHIFT” da un salto, mientras que los ganchos se disparan con las teclas &quot;Q&quot; y &quot;E&quot;.
+El botón izquierdo del ratón se utiliza para retraer el gancho, mientras que el botón
+derecho se utiliza para liberarlo. El gas propulsor se dispara en la dirección opuesta
+a la orientación de la cámara y se controla con la tecla &quot;Espacio&quot;. El objetivo es
+llegar a la cima de la estructura lo más rápido posible, evitando los obstáculos y los
+peligros en el camino.</li>
+</ul>
+<doc-anchor-target id="otros-modos-de-juego">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#otros-modos-de-juego">#</doc-anchor-trigger>
+        <span>Otros Modos de juego:</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>Modo Contrarreloj
+El jugador tiene un tiempo límite para llegar a la cima de la estructura. Cada nivel presenta
+un tiempo diferente y el objetivo es superar el tiempo lo más rápido posible.</li>
+<li>Modo de supervivencia
+El jugador debe escalar una estructura cada vez más alta, con la dificultad aumentando a
+medida que se avanza en el juego. El objetivo es sobrevivir el mayor tiempo posible
+mientras se evitan los peligros y los obstáculos en el camino.</li>
+</ul>
+<doc-anchor-target id="estilo-de-arte">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#estilo-de-arte">#</doc-anchor-trigger>
+        <span>Estilo de arte:</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>El juego tiene un estilo de arte low poly, futurista y minimalista, con un enfoque en la
+funcionalidad. Los entornos están construidos con estructuras geométricas grandes
+y simples, y los colores son brillantes y vibrantes. Los personajes tienen diseños
+claramente definidos y detallados, pero sin demasiados adornos o detalles
+innecesarios que puedan distraer del enfoque en las mecánicas de juego.</li>
+</ul>
+<doc-anchor-target id="músicasonido">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#músicasonido">#</doc-anchor-trigger>
+        <span>Música/Sonido:</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>La música y los efectos de sonido en SkyHook son dinámicos y energéticos para
+reflejar la intensidad y emoción de la acción del juego. La música presenta una
+mezcla de géneros, como electrónica, rock y orquestal, y cambia de ritmo y tono
+según las situaciones en el juego. Los efectos de sonido son detallados y realistas
+para aumentar la inmersión en el entorno, desde el sonido de los ganchos
+disparados hasta los gritos de los enemigos y los sonidos de la estructura en
+movimiento.</li>
+</ul>
+<doc-anchor-target id="moodboards">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#moodboards">#</doc-anchor-trigger>
+        <span>Moodboards:</span>
+    </h2>
+</doc-anchor-target>
+<p><a href="https://docs.google.com/presentation/d/19XjpBE6L0Ac7AGzLyo7RA7z-E2FB_8aJmqVAcn4dmNM/edit#slide=id.p13">SKYHOOK MOODBOARDS</a></p>
+<doc-anchor-target id="plan-de-desarrollocriterios-de-lanzamiento">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#plan-de-desarrollocriterios-de-lanzamiento">#</doc-anchor-trigger>
+        <span>Plan de desarrollo/Criterios de lanzamiento:</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>Plataforma: Steam/Google play/iOS/Web.</li>
+<li>Audiencia: Jugadores de todas las edades interesados en plataformas de acción y juegos
+con mecánicas difíciles.</li>
+<li>Milestone 1: Mecánicas completas - 01/05/23</li>
+<li>Milestone 2: Combates de jefes completos - 0/0/00</li>
+<li>Milestone 3: Niveles completos - 20/05/23</li>
+<li>Milestone 4: Pulido completo - 30/06/23</li>
+<li>Día de lanzamiento: 21/12/23</li>
+</ul>
 
                                 
                                 <!-- Required only on API pages -->
@@ -298,20 +413,20 @@ Aqui intente crear la rotacion que no funciono como queria y rotaba el objeto no
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../tareas/tarea-1/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../recursos/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Tarea 1</span>
+                                                <span class="block mt-1">Recursos</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../tareas/tarea-3/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../proyecto-juego/tarea-7/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Tarea 3</span>
+                                                <span class="block mt-1">Tarea 7</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -355,6 +470,6 @@ Aqui intente crear la rotacion que no funciono como queria y rotaba el objeto no
 
     <div id="docs-overlay-target"></div>
 
-    <script>window.__DOCS__ = { "title": "Tarea 2", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false }</script>
+    <script>window.__DOCS__ = { "title": "GDD", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
 </body>
 </html>
