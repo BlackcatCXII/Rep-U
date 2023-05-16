@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="turbo-root" content="/Clase-de-unity">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.737527219382">
+
+    <!-- See retype.com -->
+    <meta name="generator" content="Retype 2.4.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Tarea 7 Parte 2 Codigo</title>
+    <meta name="title" content="Tarea 7 Parte 2 Codigo">
+    <meta name="description" content="lo primero que hice fue buscar la mecanica principal que queriamos hacer que son los ganchos en youtube y en fourms ahi encontre unos pocos pero la..." />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://blackcatcxii.github.io/Clase-de-unity/proyect-skyhook/tarea-7-movimiento/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://blackcatcxii.github.io/Clase-de-unity/proyect-skyhook/tarea-7-movimiento/">
+    <meta property="og:title" content="Tarea 7 Parte 2 Codigo">
+    <meta property="og:description" content="lo primero que hice fue buscar la mecanica principal que queriamos hacer que son los ganchos en youtube y en fourms ahi encontre unos pocos pero la...">
+    <meta property="og:image" content="https://i.imgur.com/3t0N53i.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://blackcatcxii.github.io/Clase-de-unity/proyect-skyhook/tarea-7-movimiento/">
+    <meta property="twitter:title" content="Tarea 7 Parte 2 Codigo">
+    <meta property="twitter:description" content="lo primero que hice fue buscar la mecanica principal que queriamos hacer que son los ganchos en youtube y en fourms ahi encontre unos pocos pero la...">
+    <meta property="twitter:image" content="https://i.imgur.com/3t0N53i.png">
+
+    <script>(function () { var el = document.documentElement, m = localStorage.getItem("/Clase-de-unity/doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
+
+    <link href="../../favicon.ico" rel="icon" />
+    <link href="../../resources/css/retype.css?v=2.4.0.737527219382" rel="stylesheet" />
+
+    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.737527219382" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.737527219382" data-turbo-eval="false" defer></script>
+    <script id="prism-js" type="text/javascript" src="../../resources/js/prism.js?v=2.4.0.737527219382" defer></script>
+</head>
+<body>
+    <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
+        <div class="absolute bottom-0 left-0 bg-gray-100 dark:bg-dark-800" style="top: 5rem; right: 50%"></div>
+    
+        <header id="docs-site-header" class="sticky top-0 z-30 flex w-full h-16 bg-white border-b border-gray-200 md:h-20 dark:bg-dark-850 dark:border-dark-650">
+            <div class="container relative flex items-center justify-between grow pr-6 md:justify-start">
+                <!-- Mobile menu button skeleton -->
+                <button v-cloak class="skeleton docs-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+                <div v-cloak id="docs-sidebar-toggle"></div>
+        
+                <!-- Logo -->
+                <div class="flex items-center justify-between h-full py-2 md:w-75">
+                    <div class="flex items-center px-2 md:px-6">
+                        <a id="docs-site-logo" href="../../" class="flex items-center leading-snug text-xl">
+                            <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
+                                <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo.png">
+                                <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png">
+                            </span>
+                            <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">Tareas de Unity</span>
+                        </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">Docs</span>
+                    </div>
+        
+                    <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
+                </div>
+        
+                <div class="flex justify-between md:grow">
+                    <!-- Top Nav -->
+                    <nav class="hidden md:flex">
+                        <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://retype.com/guides/getting-started/">Getting Started</a>
+                            </li>
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://github.com/BlackcatCXII/Clase-de-unity/wiki">Github Wiki</a>
+                            </li>
+        
+                        </ul>
+                    </nav>
+        
+                    <!-- Header Right Skeleton -->
+                    <div v-cloak class="flex justify-end grow skeleton">
+        
+                        <!-- Search input mock -->
+                        <div class="relative hidden w-40 lg:block lg:max-w-sm lg:ml-auto">
+                            <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation"  style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                            </div>
+        
+                            <input class="w-full h-10 transition-colors duration-200 ease-in bg-gray-200 border border-transparent rounded md:text-sm hover:bg-white hover:border-gray-300 focus:outline-none focus:bg-white focus:border-gray-500 dark:bg-dark-600 dark:border-dark-600 placeholder-gray-400 dark:placeholder-dark-400"
+                            style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search" />
+                        </div>
+        
+                        <!-- Mobile search button mock -->
+                        <div class="flex items-center justify-center w-10 h-10 lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="20" height="20" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation"  style="margin-bottom: 0px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                        </div>
+        
+                        <!-- Dark mode switch placehokder -->
+                        <div class="w-10 h-10 lg:ml-2"></div>
+        
+                        <!-- History button mock -->
+                        <div class="flex items-center justify-center w-10 h-10" style="margin-right: -0.625rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="22" height="22" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation"  style="margin-bottom: 0px;"><g fill="currentColor" ><g ><path d="M12.01 6.01c-.55 0-1 .45-1 1V12a1 1 0 00.4.8l3 2.22a.985.985 0 001.39-.2.996.996 0 00-.21-1.4l-2.6-1.92V7.01c.02-.55-.43-1-.98-1z"></path><path d="M12.01 1.91c-5.33 0-9.69 4.16-10.05 9.4l-.29-.26a.997.997 0 10-1.34 1.48l1.97 1.79c.19.17.43.26.67.26s.48-.09.67-.26l1.97-1.79a.997.997 0 10-1.34-1.48l-.31.28c.34-4.14 3.82-7.41 8.05-7.41 4.46 0 8.08 3.63 8.08 8.09s-3.63 8.08-8.08 8.08c-2.18 0-4.22-.85-5.75-2.4a.996.996 0 10-1.42 1.4 10.02 10.02 0 007.17 2.99c5.56 0 10.08-4.52 10.08-10.08.01-5.56-4.52-10.09-10.08-10.09z"></path></g></g></svg>
+                        </div>
+                    </div>
+        
+                    <div v-cloak class="flex justify-end grow">
+                        <div id="docs-mobile-search-button"></div>
+                        <doc-search-desktop></doc-search-desktop>
+        
+                        <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
+                        <doc-history></doc-history>
+                    </div>
+                </div>
+            </div>
+        </header>
+    
+        <div class="container relative flex bg-white">
+            <!-- Sidebar Skeleton -->
+            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-gray-100 border-gray-200 sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton dark:bg-dark-800 dark:border-dark-650">
+            
+                <!-- Render this div, if config.showSidebarFilter is `true` -->
+                <div class="flex items-center h-16 px-6">
+                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-white border border-gray-200 rounded shadow-none text-sm focus:outline-none focus:border-gray-600 dark:bg-dark-600 dark:border-dark-600" type="text" placeholder="Filter" />
+                </div>
+            
+                <div class="pl-6 mb-4 mt-1">
+                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                </div>
+            
+                <div class="shrink-0 mt-auto bg-transparent dark:border-dark-650">
+                    <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                        <span class="text-xs whitespace-nowrap">Powered by</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Sidebar component -->
+            <doc-sidebar v-cloak>
+                <template #sidebar-footer>
+                    <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-dark-650">
+            
+                        <div class="py-3 px-6 md:hidden border-b dark:border-dark-650">
+                            <nav>
+                                <ul class="flex flex-wrap justify-center items-center">
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://retype.com/guides/getting-started/">Getting Started</a>
+                                    </li>
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://github.com/BlackcatCXII/Clase-de-unity/wiki">Github Wiki</a>
+                                    </li>
+            
+                                </ul>
+                            </nav>
+                        </div>
+            
+                        <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                            <span class="text-xs whitespace-nowrap">Powered by</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                        </a>
+                    </div>
+                </template>
+            </doc-sidebar>
+    
+            <div class="grow min-w-0 dark:bg-dark-850">
+                <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
+                <div class="flex">
+                    <div class="grow min-w-0 px-6 md:px-16">
+                        <main class="relative pt-6 pb-16">
+                            <div class="docs-markdown" id="docs-content">
+                                <!-- Rendered if sidebar right is enabled -->
+                                <div id="docs-sidebar-right-toggle"></div>
+                
+                                <!-- Page content  -->
+<doc-anchor-target id="tarea-7-parte-2-codigo" class="break-words">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#tarea-7-parte-2-codigo">#</doc-anchor-trigger>
+        <span>Tarea 7 Parte 2 Codigo</span>
+    </h1>
+</doc-anchor-target>
+<p>
+<figure>
+    <div class="relative w-full mb-6 overflow-hidden pt-9/16">
+        <embed class="w-full h-full border-0 absolute inset-0" src="https://www.youtube.com/embed/q__wKMwO1B0"></embed>
+    </div>
+</figure>
+</p>
+<hr />
+<doc-anchor-target id="aplicaciones-utilizados-de-investigacion-y-guias" class="break-words">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#aplicaciones-utilizados-de-investigacion-y-guias">#</doc-anchor-trigger>
+        <span>Aplicaciones utilizados de investigacion y guias</span>
+    </h1>
+</doc-anchor-target>
+<p>lo primero que hice fue buscar la mecanica principal que queriamos hacer que son los ganchos en youtube y en fourms ahi encontre unos pocos pero la que mas me llamo la atencion es la del canal de <a href="https://www.youtube.com/@davegamedevelopment/videos">@davegamedevelopment</a> que tiene tutorials explicativos y con una comunidad que te ayuda cuando teni problemas o si hay mejores formas de hacer ciertas cosas.</p>
+<p>Aqui estuve varios horas viendo los videos tutorials que tenia de movimientos basicos, el slide para luego no tener problemas con el tutorial de los ganchos ya que el usa este mismo codigo para el movimiento. suiguiendo los tutorials quitaba lo que no hibamos a usar en el juego y en los comentarios viendo solucciones de problemas que tenia y integrandolos al codigo al mismo tiuempo usando chat GPT para los errores ortograficos o si me salia un error que no entendia porque pasaba.</p>
+<doc-anchor-target id="codigo">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#codigo">#</doc-anchor-trigger>
+        <span>Codigo</span>
+    </h1>
+</doc-anchor-target>
+<p>Este explicacion va a ser largo ya que me voy a estar explicando lo que entendi utilizando notas de punteo que ecribi mientras veia los video tutoriales y es harto codigo.</p>
+<doc-anchor-target id="parte-1-preparando-la-escena">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#parte-1-preparando-la-escena">#</doc-anchor-trigger>
+        <span>Parte 1 preparando la escena</span>
+    </h1>
+</doc-anchor-target>
+<p>Inicie creando varios obstaculos y objetos para ir probando el movimiento.
+<figure class="content-center">
+    <img src="https://i.imgur.com/3t0N53i.png" alt="" />
+    <figcaption class="caption"></figcaption>
+</figure>
+Despues me puse a preparar la herarquia importando el model del personaje etc</p>
+<div class="mb-6 overflow-hidden border rounded-md docs-columns dark:border-dark-650" style="grid-template-columns: repeat(2, minmax(0, 1fr));">
+    <div class="flex items-center px-5 py-3 font-medium leading-snug text-gray-900 border-b border-gray-200 dark:border-dark-650 dark:text-white border-r">
+        <span>Preparacion de la camara y jugador</span>
+    </div>
+    <div class="flex items-center px-5 py-3 font-medium leading-snug text-gray-900 border-b border-gray-200 dark:border-dark-650 dark:text-white">
+        <span>Explicacion</span>
+    </div>
+    <div class="px-5 py-3 docs-columns-content border-r border-gray-200 dark:border-dark-650">
+<p><figure class="content-center">
+    <img src="https://i.imgur.com/6WYwNXG.png" alt="" />
+    <figcaption class="caption"></figcaption>
+</figure>
+</p>
+    </div>
+    <div class="px-5 py-3 docs-columns-content">
+<p>Cree un empty object llamado CamHolder que es para tener un sustenedor de la camara del jugador que es para no tener problemas ya que lei y escuche que tener la camara como hijo del jugador podria traer problemas.</p>
+<p>luego cree otro empty object llamado Player que tiene como hijo al modelo del jugador &quot;PlayerObj&quot;, La posicion de la camara &quot;PlayerCam&quot; y la orientacion de la camara &quot;Orientation&quot; que son luegos llamados en un codigo simple para darle la posicion y orientacion a la camara.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-csharp"><code v-pre class="language-csharp">using UnityEngine;
+
+public class MoveCamera : MonoBehaviour
+{
+    public Transform cameraPosition;
+
+    private void LateUpdate()
+    {
+        if (cameraPosition != null)
+        {
+            transform.position = cameraPosition.position;
+            transform.rotation = cameraPosition.rotation;
+        }
+        else
+        {
+            Debug.LogWarning(&quot;Camera position reference is not set.&quot;);
+        }
+    }
+}</code></pre>
+</doc-codeblock></div>
+<p>El Empty Player es lo que va a contener todo los scrpits y el rigid body del jugador</p>
+    </div>
+</div>
+<doc-anchor-target id="parte-2-el-playercam">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#parte-2-el-playercam">#</doc-anchor-trigger>
+        <span>Parte 2 El PlayerCam</span>
+    </h1>
+</doc-anchor-target>
+<p>Iniciamos con el Script PlayerCam que tiene todo lo relacionado con la camara, el suiguimiento del mouse y la rotacion del PlayerObj</p>
+<div class="mb-6 overflow-hidden border rounded-md docs-columns dark:border-dark-650" style="grid-template-columns: repeat(2, minmax(0, 1fr));">
+    <div class="flex items-center px-5 py-3 font-mono leading-snug text-white docs-columns-code-title border-r">
+        <span>Codigo</span>
+    </div>
+    <div class="flex items-center px-5 py-3 font-medium leading-snug text-gray-900 border-b border-gray-200 dark:border-dark-650 dark:text-white">
+        <span>Explicacion</span>
+    </div>
+    <div class="docs-columns-code docs-columns-content border-r border-gray-200 dark:border-dark-650">
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-csharp"><code v-pre class="language-csharp">using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerCam : MonoBehaviour
+{
+    public float sensX;
+    public float sensY;
+
+    public Transform orientation;
+    public Transform playerModel;
+
+    private float yRotation = 0f;
+    private float xRotation = 0f;
+
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
+    private void Update()
+    {
+        float mouseX = Input.GetAxisRaw(&quot;Mouse X&quot;) * Time.deltaTime * sensX;
+        float mouseY = Input.GetAxisRaw(&quot;Mouse Y&quot;) * Time.deltaTime * sensY;
+
+        yRotation += mouseX;
+        xRotation -= mouseY;
+        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+
+        transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
+        orientation.rotation = Quaternion.Euler(0, yRotation, 0);
+
+        playerModel.rotation = Quaternion.Euler(0f, yRotation, 0f);
+    }
+}</code></pre>
+</doc-codeblock></div>
+    </div>
+    <div class="px-5 py-3 docs-columns-content">
+<p>Este Codiog esta pegado a la camara del jugador &quot;PlayerCam&quot;.
+Este codigo lo explicare usando puntos para cada seccion del codigo.</p>
+<ul>
+<li>public float sensX; y public float sensY; son variables publicas que determinan la sensibilidad del movimiento de la camara en los ejes X e Y que despues se pueden ajustar en el inspector.</li>
+<li>public Transform orientation; y public Transform playerModel; son referencias a los objetos transform de Unity.</li>
+<li>private float yRotation = 0f; y private float xRotation = 0f; son variables privadas que almacenan la rotacion actual de la camara en los ejes Y y X.</li>
+<li>En el Start(), se configura el estado del cursor para que este bloqueado y no sea visible.</li>
+<li>En el Update(), se obtienen las entradas de movimiento del mouse en los ejes X e Y mediante Input.GetAxisRaw(&quot;Mouse X&quot;) y Input.GetAxisRaw(&quot;Mouse Y&quot;). Estos valores se multiplican por Time.deltaTime para hacer el movimiento suave.</li>
+<li>yRotation += mouseX; y xRotation -= mouseY; actualizan las variables de rotacion en funcion de los movimientos del mouse. yRotation se incrementa con el movimiento horizontal del mouse y xRotation se decrementa con el movimiento vertical del mouse.</li>
+<li>xRotation = Mathf.Clamp(xRotation, -90f, 90f); asegura que el angulo de rotacion vertical este limitado entre -90 grados y 90 grados para evitar que la camara gire completamente hacia arriba o hacia abajo.</li>
+<li>transform.rotation = Quaternion.Euler(xRotation, yRotation, 0); actualiza la rotacion de la camara utilizando la funcion Quaternion.Euler() con los angulos de rotacion actuales.</li>
+<li>orientation.rotation = Quaternion.Euler(0, yRotation, 0); actualiza la rotacion del objeto orientation en el eje Y.</li>
+</ul>
+    </div>
+</div>
+<doc-anchor-target id="parte-3-el-movimiento">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#parte-3-el-movimiento">#</doc-anchor-trigger>
+        <span>Parte 3 El movimiento</span>
+    </h1>
+</doc-anchor-target>
+<p>Esta seccion va a ser largo ya que es harto y es lo que mas me costo.</p>
+<p>hice varios notas en un doc donde discribi que hace cada cosa aqui lo dejor de una forma ordenada las cosas que no entendi lo buscaba o utilizaba chat gpt para que me lo explicara de forma clara.</p>
+<div class="mb-6 overflow-hidden border rounded-md docs-columns dark:border-dark-650" style="grid-template-columns: repeat(2, minmax(0, 1fr));">
+    <div class="flex items-center px-5 py-3 font-medium leading-snug text-gray-900 border-b border-gray-200 dark:border-dark-650 dark:text-white border-r">
+        <span>Codigo</span>
+    </div>
+    <div class="flex items-center px-5 py-3 font-medium leading-snug text-gray-900 border-b border-gray-200 dark:border-dark-650 dark:text-white">
+        <span>Explicacion</span>
+    </div>
+    <div class="px-5 py-3 docs-columns-content border-r border-gray-200 dark:border-dark-650">
+<p>Este escript se encruentra adjuntado al Player</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-csharp"><code v-pre class="language-csharp">using System.Collections;
+using UnityEngine;
+
+public class PlayerMovement : MonoBehaviour
+{
+    [Header(&quot;Movement&quot;)]
+    private float moveSpeed;
+    public float walkSpeed;
+    public float sprintSpeed;
+    public float slideSpeed;
+
+    public float desierdMoveSpeed;
+    public float lastDesiredMoveSpeed;
+
+
+    public float groundDrag;
+
+    [Header(&quot;Jumping&quot;)]
+    public float jumpForce;
+    public float jumpCooldown;
+    public float airMultiplier;
+    bool readyToJump;
+
+    [Header(&quot;Keybinds&quot;)]
+    public KeyCode jumpKey = KeyCode.Space;
+    public KeyCode sprintKey = KeyCode.LeftShift;
+
+    [Header(&quot;Ground Check&quot;)]
+    public float playerHeight;
+    public Transform groundCheck;
+    public float groundDistance = 0.4f;
+    public LayerMask whatIsGround;
+    bool grounded;
+
+[Header(&quot;Slope Handling&quot;)]
+    public float maxSlopeAngle;
+    private RaycastHit slopeHit;
+    private bool exitingSlope;
+
+    public Transform orientation;
+
+    private float horizontalInput;
+    private float verticalInput;
+
+    private Vector3 moveDirection;
+
+    private Rigidbody rb;
+
+    public MovementState state;
+
+    public enum MovementState
+    {
+        walking,
+        sprinting,
+        sliding,
+        air
+    }
+
+    public bool sliding;
+
+    private void Start()
+    {
+        rb = GetComponent&lt;Rigidbody&gt;();
+        rb.freezeRotation = true; // Allowing rotation of the Rigidbody
+
+        readyToJump = true;
+    }
+
+    private void Update()
+    {
+        grounded = Physics.CheckSphere(groundCheck.position, groundDistance, whatIsGround);
+        Debug.Log(&quot;IsGrounded: &quot; + grounded);
+
+        MyInput();
+        SpeedControl();
+        StateHandler();
+
+        float targetDrag = grounded ? groundDrag : 0f;
+        rb.drag = Mathf.Lerp(rb.drag, targetDrag, 10f * Time.deltaTime);
+    }
+
+    private void FixedUpdate()
+    {
+        MovePlayer();
+    }
+
+    private void MyInput()
+    {
+        horizontalInput = Input.GetAxisRaw(&quot;Horizontal&quot;);
+        verticalInput = Input.GetAxisRaw(&quot;Vertical&quot;);
+
+        if (Input.GetKey(jumpKey) &amp;&amp; readyToJump &amp;&amp; grounded)
+        {
+            readyToJump = false;
+
+            Jump();
+
+            Invoke(nameof(ResetJump), jumpCooldown);
+        }
+    }
+
+    private void StateHandler()
+        {
+            if(sliding)
+            {
+                state = MovementState.sliding;
+
+                if (OnSlope() &amp;&amp; rb.velocity.y &lt; 0.1f)
+                    desierdMoveSpeed = slideSpeed;
+                else
+                    desierdMoveSpeed = sprintSpeed;
+            }
+            else if(grounded &amp;&amp; Input.GetKey(sprintKey))
+            {
+                state = MovementState.sprinting;
+                desierdMoveSpeed = sprintSpeed;
+
+            }
+
+            else if (grounded)
+            {
+                state = MovementState.walking;
+                desierdMoveSpeed = walkSpeed;
+            }
+
+            else
+            {
+                state = MovementState.air;
+            }
+
+            rb.useGravity = !OnSlope();
+
+            if(Mathf.Abs(desierdMoveSpeed - lastDesiredMoveSpeed) &gt; 4f &amp;&amp; moveSpeed != 0)
+            {
+                StopAllCoroutines();
+                StartCoroutine(SmoothlyLerpMoveSpeed());
+            }
+            else
+            {
+                moveSpeed = desierdMoveSpeed;
+            }
+
+            lastDesiredMoveSpeed = desierdMoveSpeed;
+        }
+    private IEnumerator SmoothlyLerpMoveSpeed()
+    {
+        float time = 0;
+        float difference = Mathf.Abs(desierdMoveSpeed - moveSpeed);
+        float startValue = moveSpeed;
+
+        while (time &lt; difference)
+        {
+            moveSpeed = Mathf.Lerp(startValue, desierdMoveSpeed, time / difference);
+            time += Time.deltaTime;
+            yield return null;
+        }
+
+        moveSpeed = desierdMoveSpeed;
+    }
+
+    private void MovePlayer()
+    {
+        moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
+
+        if (OnSlope() &amp;&amp; !exitingSlope)
+        {
+            rb.AddForce(GetSlopeMoveDirection(moveDirection) * moveSpeed * 20f, ForceMode.Force);
+
+            if(rb.velocity.y &gt; 0)
+                rb.AddForce(Vector3.down * 80f, ForceMode.Force);
+        }
+
+        if (grounded)
+            rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
+
+        else if (!grounded)
+            rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
+    }
+
+    private void SpeedControl()
+    {
+        if (OnSlope() &amp;&amp; !exitingSlope)
+        {
+            if(rb.velocity.magnitude &gt; moveSpeed)
+                rb.velocity = rb.velocity.normalized * moveSpeed;
+        }
+
+        else
+        {
+            Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+
+            if (flatVel.magnitude &gt; moveSpeed)
+            {
+                Vector3 limitedVel = flatVel.normalized * moveSpeed;
+                rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
+            }
+        }
+    }
+
+    private void Jump()
+    {
+        exitingSlope = true;
+
+        rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+
+        rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+    }
+
+    private void ResetJump()
+    {
+        readyToJump = true;
+
+        exitingSlope = false;
+    }
+
+    public bool OnSlope()
+    {
+        if(Physics.Raycast(transform.position, Vector3.down, out slopeHit, playerHeight * 0.5f + 0.3f))
+        {
+            float angle = Vector3.Angle(Vector3.up, slopeHit.normal);
+            return angle &lt; maxSlopeAngle &amp;&amp; angle != 0;
+        }
+
+        return false;
+
+    }
+
+    public Vector3 GetSlopeMoveDirection(Vector3 direction)
+        {
+            return Vector3.ProjectOnPlane(direction, slopeHit.normal).normalized;
+        }
+}</code></pre>
+</doc-codeblock></div>
+    </div>
+    <div class="px-5 py-3 docs-columns-content">
+<ul>
+<li>private float moveSpeed; y public float walkSpeed;, public float sprintSpeed; y public float slideSpeed; son variables que determinan las velocidades de movimiento del jugador en diferentes situaciones. &quot;walkSpeed&quot; es la velocidad al caminar, &quot;sprintSpeed&quot; es la velocidad al correr, y &quot;slideSpeed&quot; es la velocidad al deslizarse.</li>
+<li>public float desiredMoveSpeed; y public float lastDesiredMoveSpeed; son variables que almacenan la velocidad de movimiento deseada y la ultima velocidad deseada del jugador.</li>
+<li>public float groundDrag; es la resistencia al arrastre aplicada al jugador cuando esta en el suelo.</li>
+<li>public float jumpForce; public float jumpCooldown; y public float airMultiplier; son variables relacionadas con el salto del jugador. &quot;jumpForce&quot; determina la fuerza con la que el jugador salta, &quot;jumpCooldown&quot; es el tiempo de espera entre saltos, y &quot;airMultiplier&quot; es un multiplicador aplicado a la velocidad de movimiento cuando el jugador esta en el aire.</li>
+<li>public KeyCode jumpKey = KeyCode.Space; y public KeyCode sprintKey = KeyCode.LeftShift; son las teclas asignadas para saltar y correr.</li>
+<li>public float playerHeight;, public Transform groundCheck;, public float groundDistance = 0.4f; y public LayerMask whatIsGround; son variables relacionadas con la deteccion del suelo. &quot;playerHeight&quot; es la altura del jugador, &quot;groundCheck&quot; es un objeto utilizado para verificar si el jugador esta en el suelo, &quot;groundDistance&quot; es la distancia a la que se realiza la verificacion y &quot;whatIsGround&quot; es la capa que se considera como suelo.</li>
+<li>public float maxSlopeAngle;, private RaycastHit slopeHit; y private bool exitingSlope; son variables relacionadas con el manejo de pendientes. &quot;maxSlopeAngle&quot; es el angulo maximo de una pendiente en la que el jugador puede caminar, &quot;slopeHit&quot; es el resultado de un raycast que detecta la pendiente en la que se encuentra el jugador, y exitingSlope indica si el jugador esta saliendo de una pendiente.</li>
+<li>public Transform orientation; es una referencia al objeto que determina la orientacion del jugador.</li>
+<li>private float horizontalInput; y private float verticalInput; almacenan las entradas de movimiento horizontal y vertical del jugador.</li>
+<li>private Vector3 moveDirection; es el vector de direccion de movimiento del jugador.</li>
+<li>private Rigidbody rb; es una referencia al componente Rigidbody del jugador.</li>
+<li>public MovementState state; es una variable que representa el estado de movimiento del jugador. Puede ser &quot;walking&quot; (caminando), &quot;sprinting&quot; (corriendo), &quot;sliding&quot; (deslizandose) o &quot;air&quot; (en el aire).</li>
+<li>public bool sliding; indica si el jugador esta deslizandose.</li>
+<li>En el Start(), se obtiene la referencia al componente Rigidbody y se congela su rotacion. Tambi�n se inicializa la variable readyToJump.</li>
+<li>En el Update() Aqu� se verifica si el jugador esta en el suelo, se obtienen las entradas del jugador, se controla la velocidad y se actualiza el estado del movimiento.</li>
+<li>El FixedUpdate() se ejecuta en intervalos de tiempo fijos y se utiliza para mover al jugador.</li>
+<li>El MyInput() obtiene las entradas del jugador para el movimiento horizontal y vertical, y verifica si se debe realizar un salto.</li>
+<li>El StateHandler() determina el estado actual del movimiento del jugador y ajusta la velocidad de movimiento segun el estado. Tambien controla la gravedad y la transicion suave entre diferentes velocidades de movimiento.</li>
+<li>El SmoothlyLerpMoveSpeed() se utiliza para realizar una transicion suave entre dos velocidades de movimiento.</li>
+<li>El MovePlayer() mueve al jugador en la direccion y con la velocidad adecuadas, teniendo en cuenta si el jugador esta en una pendiente.</li>
+<li>El SpeedControl() ajusta la velocidad del jugador para que no supere la velocidad maxima permitida.</li>
+<li>El Jump() realiza el salto del jugador aplicando una fuerza hacia arriba.</li>
+<li>El ResetJump() reinicia el salto permitiendo que el jugador pueda saltar nuevamente.</li>
+<li>El OnSlope() verifica si el jugador esta en una pendiente utilizando un raycast y el angulo maximo permitido.</li>
+<li>El GetSlopeMoveDirection() calcula la direccion de movimiento en una pendiente utilizando el vector de direccion y la normal de la pendiente.</li>
+</ul>
+    </div>
+</div>
+<hr />
+<div class="mb-6 overflow-hidden border rounded-md docs-columns dark:border-dark-650" style="grid-template-columns: repeat(2, minmax(0, 1fr));">
+    <div class="flex items-center px-5 py-3 font-mono leading-snug text-white docs-columns-code-title border-r">
+        <span>Codigo</span>
+    </div>
+    <div class="flex items-center px-5 py-3 font-medium leading-snug text-gray-900 border-b border-gray-200 dark:border-dark-650 dark:text-white">
+        <span>Explicacion</span>
+    </div>
+    <div class="docs-columns-code docs-columns-content border-r border-gray-200 dark:border-dark-650">
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-csharp"><code v-pre class="language-csharp">using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Sliding : MonoBehaviour
+{
+    [Header(&quot;References&quot;)]
+    public Transform orientation;
+    public Transform playerObj;
+    private Rigidbody rb;
+    private PlayerMovement pm;
+
+    [Header(&quot;Sliding&quot;)]
+    public float maxSlideTime;
+    public float slideForce;
+    private float slideTimer;
+
+    public float slideYScale;
+    private float startYScale;
+
+    [Header(&quot;Input&quot;)]
+    public KeyCode slideKey = KeyCode.LeftControl;
+    private float horizontalInput;
+    private float verticalInput;
+
+
+    private void Start()
+    {
+        rb = GetComponent&lt;Rigidbody&gt;();
+        pm = GetComponent&lt;PlayerMovement&gt;();
+
+        startYScale = playerObj.localScale.y;
+    }
+
+    private void Update()
+    {
+        horizontalInput = Input.GetAxisRaw(&quot;Horizontal&quot;);
+        verticalInput = Input.GetAxisRaw(&quot;Vertical&quot;);
+
+        if (Input.GetKeyDown(slideKey) &amp;&amp; (horizontalInput != 0 || verticalInput != 0))
+            StartSlide();
+
+        if (Input.GetKeyUp(slideKey) &amp;&amp; pm.sliding)
+            StopSlide();
+    }
+
+    private void FixedUpdate()
+    {
+        if (pm.sliding)
+            SlidingMovement();
+    }
+
+    private void StartSlide()
+    {
+        pm.sliding = true;
+
+        playerObj.localScale = new Vector3(playerObj.localScale.x, slideYScale, playerObj.localScale.z);
+        rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
+
+        slideTimer = maxSlideTime;
+    }
+
+    private void SlidingMovement()
+    {
+        Vector3 inputDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
+
+        // sliding normal
+        if(!pm.OnSlope() || rb.velocity.y &gt; -0.1f)
+        {
+            rb.AddForce(inputDirection.normalized * slideForce, ForceMode.Force);
+
+            slideTimer -= Time.deltaTime;
+        }
+
+        // sliding down a slope
+        else
+        {
+            rb.AddForce(pm.GetSlopeMoveDirection(inputDirection) * slideForce, ForceMode.Force);
+        }
+
+        if (slideTimer &lt;= 0)
+            StopSlide();
+    }
+
+    private void StopSlide()
+    {
+        pm.sliding = false;
+
+        playerObj.localScale = new Vector3(playerObj.localScale.x, startYScale, playerObj.localScale.z);
+    }
+}</code></pre>
+</doc-codeblock></div>
+    </div>
+    <div class="px-5 py-3 docs-columns-content">
+<p>Este codigo permite al jugador iniciar y detener el deslizamiento al presionar una tecla espec�fica. Durante el deslizamiento, se aplica una fuerza de deslizamiento en la direccion de entrada, lo que permite al jugador moverse rapidamente y de manera controlada.</p>
+<ul>
+<li>orientation y playerObj son referencias a los objetos en la escena necesarios para el deslizamiento. rb es una referencia al componente Rigidbody del objeto actual, mientras que pm es una referencia al script PlayerMovement.</li>
+<li>maxSlideTime es la duracion maxima del deslizamiento. slideForce determina la fuerza aplicada durante el deslizamiento. slideYScale es la escala en el eje Y del objeto del jugador cuando esta deslizandose. startYScale almacena la escala original en el eje Y del objeto del jugador.</li>
+<li>slideKey es la tecla que el jugador debe presionar para iniciar y detener el deslizamiento. horizontalInput y verticalInput almacenan las entradas del jugador para el movimiento horizontal y vertical.</li>
+<li>En el Start(), se asignan las referencias necesarias y se guarda la escala original en startYScale.</li>
+<li>En el Update(), se capturan las entradas del jugador y se verifica si se debe iniciar o detener el deslizamiento. Al presionar la tecla slideKey y tener una entrada de movimiento (horizontal o vertical), se llama al StartSlide() para iniciar el deslizamiento. Al soltar la tecla slideKey y si el jugador esta deslizandose, se llama al StopSlide() para detener el deslizamiento.</li>
+<li>En el FixedUpdate(), si el jugador esta deslizandose (pm.sliding es verdadero), se llama al SlidingMovement() para aplicar la fuerza de deslizamiento.</li>
+<li>El StartSlide() se encarga de iniciar el deslizamiento. Establece pm.sliding en verdadero, cambia la escala en el eje Y del objeto del jugador a slideYScale para que se vea mas bajo, aplica una fuerza hacia abajo al Rigidbody y establece el temporizador de deslizamiento en maxSlideTime.</li>
+<li>El SlidingMovement() se encarga del movimiento durante el deslizamiento. Calcula la direccion de entrada utilizando orientation.forward y orientation.right multiplicados por las entradas horizontales y verticales respectivamente. Luego, aplica una fuerza de deslizamiento en funcion de la direccion de entrada normalizada y slideForce. El temporizador de deslizamiento disminuye con el tiempo. Si el jugador esta deslizando hacia abajo por una pendiente, se utiliza pm.GetSlopeMoveDirection() para obtener la direccion de movimiento en la pendiente y se aplica una fuerza de deslizamiento en esa direccion.</li>
+<li>El StopSlide() se encarga de detener el deslizamiento. Establece pm.sliding en falso y restaura la escala original en el eje Y del objeto del jugador.</li>
+</ul>
+    </div>
+</div>
+<hr />
+<p>Imagen del inspector
+<figure class="content-center">
+    <img src="https://i.imgur.com/McXUFvE.png" alt="" />
+    <figcaption class="caption"></figcaption>
+</figure>
+</p>
+
+                                
+                                <!-- Required only on API pages -->
+                                <doc-toolbar-member-filter-no-results />
+                            </div>
+                            <footer class="clear-both">
+                            
+                                <nav class="flex mt-14">
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../proyect-skyhook/tarea-7-assets/">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                            <span>
+                                                <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
+                                                <span class="block mt-1">Tarea 7 Parte 1 Assets</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                            
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../tareas/tarea-1/">
+                                            <span>
+                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
+                                                <span class="block mt-1">Tarea 1</span>
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        </a>
+                                    </div>
+                                </nav>
+                            </footer>
+                        </main>
+                
+                        <div class="border-t dark:border-dark-650 pt-6 mb-8">
+                            <footer class="flex flex-wrap items-center justify-between">
+                                <div>
+                                    <ul class="flex flex-wrap items-center text-sm">
+                                    </ul>
+                                </div>
+                                <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© Copyright 2023. All rights reserved.</p></div>
+                            </footer>
+                        </div>
+                    </div>
+                
+                    <!-- Rendered if sidebar right is enabled -->
+                    <!-- Sidebar right skeleton-->
+                    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-white border-gray-200 lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:transform-none sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton dark:bg-dark-850 dark:border-dark-650">
+                        <div class="pl-5">
+                            <div class="w-32 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-48 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-40 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                        </div>
+                    </div>
+                
+                    <!-- User should be able to hide sidebar right -->
+                    <doc-sidebar-right v-cloak></doc-sidebar-right>
+                </div>
+
+            </div>
+        </div>
+    
+        <doc-search-mobile></doc-search-mobile>
+        <doc-back-to-top></doc-back-to-top>
+    </div>
+
+
+    <div id="docs-overlay-target"></div>
+
+    <script>window.__DOCS__ = { "title": "Tarea 7 Parte 2 Codigo", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false }</script>
+</body>
+</html>
